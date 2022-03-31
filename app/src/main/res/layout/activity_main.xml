@@ -13,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Cafe App"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-condensed-light"
         android:textSize="40sp"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -22,7 +24,7 @@
         android:id="@+id/edit_text_Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
+        android:minHeight="68dp"
         android:layout_margin="10dp"
         android:hint="Name" />
 
@@ -71,9 +73,6 @@
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
-
-
-
 
     </LinearLayout>
 
