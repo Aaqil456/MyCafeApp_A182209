@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/screen_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Cafe App"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:layout_gravity="center" />
+
+    <EditText
+        android:id="@+id/edit_text_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_margin="10dp"
+        android:hint="Name" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Latte"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:layout_marginVertical="10dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_quantity"
+            android:text="0"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_add"
+                android:text="Add"
+                android:backgroundTint="@color/btn_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_minus"
+                android:text="Minus"
+                android:backgroundTint="@color/btn_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+       android:gravity="bottom"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_checkout"
+            android:backgroundTint="@color/btn_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checkout" />
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
