@@ -3,11 +3,14 @@ package com.example.mycafeapp_a182209;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class OrderDetailActivity extends AppCompatActivity {
+public class OrderDetailActivity extends AppCompatActivity implements View.OnClickListener {
     ImageButton imgBtnCall,imgBtnEmail,imgBtnWeb;
     TextView tvCustName,tvCoffeeQuantity;
     String name;
@@ -34,6 +37,43 @@ public class OrderDetailActivity extends AppCompatActivity {
         tvCoffeeQuantity.setText(""+quantity);
         tvCustName.setText(name);
 
+        //btn function
+        imgBtnCall.setOnClickListener(this);
+        imgBtnWeb.setOnClickListener(this);
+        imgBtnEmail.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+
+            case R.id.imageButtonCall:
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("0182967861"));
+                //verify an app exist for this action
+                if(callIntent.resolveActivity(getPackageManager())!=null) {
+                    startActivity(callIntent);
+                }
+                else{
+                    Toast.makeText(OrderDetailActivity.this, "No app can handle this action", Toast.LENGTH_SHORT).show();
+
+                }
+                break;
+
+            case R.id.imageButtonEmail:
+                Toast.makeText(OrderDetailActivity.this, "Thank you "+name+" for order "+quantity+" Latte", Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case R.id.imageButtonWeb:
+                Toast.makeText(OrderDetailActivity.this, "Thank you "+name+" for order "+quantity+" Latte", Toast.LENGTH_SHORT).show();
+
+                break;
+
+
+
+        }
 
     }
 }
