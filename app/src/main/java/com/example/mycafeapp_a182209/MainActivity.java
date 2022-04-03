@@ -2,6 +2,7 @@ package com.example.mycafeapp_a182209;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_quantity;
     Button btnAdd,btnMinus,btnCheckout;
     EditText edit_text_Name;
+
 
     int quantity;
     @Override
@@ -51,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 name=edit_text_Name.getText().toString();
                 Toast.makeText(MainActivity.this, "Thank you "+name+" for order "+quantity+" Latte", Toast.LENGTH_SHORT).show();
+
+                //intent
+                Intent intent = new Intent(MainActivity.this,OrderDetailActivity.class);
+
+                intent.putExtra("quantity",quantity);
+                intent.putExtra("name",name);
+
+                startActivity(intent);
+
             }
         });
     }

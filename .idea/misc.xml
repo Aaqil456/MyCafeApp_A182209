@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Admin/AndroidStudioProjects/MyCafeApp_A182209/app/src/main/res/drawable/btn_bg.xml" value="0.2203125" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/MyCafeApp_A182209/app/src/main/res/drawable/ic_call.xml" value="0.2203125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/MyCafeApp_A182209/app/src/main/res/drawable/screen_bg.xml" value="0.2203125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/MyCafeApp_A182209/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/MyCafeApp_A182209/app/src/main/res/layout/activity_order_detail.xml" value="0.22" />
       </map>
     </option>
   </component>
