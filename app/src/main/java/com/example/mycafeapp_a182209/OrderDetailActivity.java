@@ -62,13 +62,32 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
                 break;
 
             case R.id.imageButtonEmail:
-                Toast.makeText(OrderDetailActivity.this, "Thank you "+name+" for order "+quantity+" Latte", Toast.LENGTH_SHORT).show();
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.setType("text/plain");
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT,"Your Order From MyCafeApp_A182209");
+                emailIntent.putExtra(Intent.EXTRA_TEXT,"Email message: Information about your order");
+                emailIntent.putExtra(Intent.EXTRA_EMAIL,new String[]{"mycafeapp@company.com"});
 
+                if(emailIntent.resolveActivity(getPackageManager())!=null) {
+                    startActivity(emailIntent);
+                }
+                else{
+                    Toast.makeText(OrderDetailActivity.this, "No app can handle this action", Toast.LENGTH_SHORT).show();
+
+                }
                 break;
 
             case R.id.imageButtonWeb:
-                Toast.makeText(OrderDetailActivity.this, "Thank you "+name+" for order "+quantity+" Latte", Toast.LENGTH_SHORT).show();
+                Uri webpage= Uri.parse("https://en.wikipedia.org/wiki/Coffee");
+                Intent webIntent = new Intent(Intent.ACTION_VIEW,webpage);
 
+                if(webIntent.resolveActivity(getPackageManager())!=null) {
+                    startActivity(webIntent);
+                }
+                else{
+                    Toast.makeText(OrderDetailActivity.this, "No app can handle this action", Toast.LENGTH_SHORT).show();
+
+                }
                 break;
 
 
