@@ -50,7 +50,7 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
 
             case R.id.imageButtonCall:
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("0182967861"));
+                callIntent.setData(Uri.parse("tel: 0182967861"));
                 //verify an app exist for this action
                 if(callIntent.resolveActivity(getPackageManager())!=null) {
                     startActivity(callIntent);
