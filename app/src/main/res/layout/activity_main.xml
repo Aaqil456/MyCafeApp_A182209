@@ -27,7 +27,8 @@
         android:layout_height="wrap_content"
         android:minHeight="68dp"
         android:layout_margin="10dp"
-        android:hint="Name" />
+        android:hint="Name"
+        android:textColorHint="@color/black"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -63,12 +64,14 @@
             <Button
                 android:id="@+id/btn_add"
                 android:text="Add"
+                android:textColor="@color/white"
                 android:backgroundTint="@color/btn_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/btn_minus"
                 android:text="Minus"
+                android:textColor="@color/white"
                 android:backgroundTint="@color/btn_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -85,9 +88,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <Button
+            android:id="@+id/ButtonVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/btn_color"
+            android:layout_marginBottom="48dp"
+            android:text="How we make our coffee ?"
+           />
+
         <Button
             android:id="@+id/btn_checkout"
             android:backgroundTint="@color/btn_color"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Checkout" />

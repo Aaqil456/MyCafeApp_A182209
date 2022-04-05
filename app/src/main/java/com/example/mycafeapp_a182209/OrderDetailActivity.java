@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class OrderDetailActivity extends AppCompatActivity implements View.OnClickListener {
     ImageButton imgBtnCall,imgBtnEmail,imgBtnWeb;
+    Button imgBtnVideo;
     TextView tvCustName,tvCoffeeQuantity;
     String name;
     int quantity;
@@ -23,6 +25,7 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
          imgBtnCall=findViewById(R.id.imageButtonCall);
          imgBtnEmail=findViewById(R.id.imageButtonEmail);
          imgBtnWeb=findViewById(R.id.imageButtonWeb);
+         imgBtnVideo=findViewById(R.id.ButtonVideo);
 
          tvCustName=findViewById(R.id.txt_cust_name);
          tvCoffeeQuantity=findViewById(R.id.txt_coffee_quantity);
@@ -41,6 +44,7 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
         imgBtnCall.setOnClickListener(this);
         imgBtnWeb.setOnClickListener(this);
         imgBtnEmail.setOnClickListener(this);
+        imgBtnVideo.setOnClickListener(this);
 
     }
 
@@ -78,11 +82,24 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
                 break;
 
             case R.id.imageButtonWeb:
-                Uri webpage= Uri.parse("https://en.wikipedia.org/wiki/Coffee");
+                Uri webpage= Uri.parse("https://www.google.com");
                 Intent webIntent = new Intent(Intent.ACTION_VIEW,webpage);
 
                 if(webIntent.resolveActivity(getPackageManager())!=null) {
                     startActivity(webIntent);
+                }
+                else{
+                    Toast.makeText(OrderDetailActivity.this, "No app can handle this action", Toast.LENGTH_SHORT).show();
+
+                }
+                break;
+
+            case R.id.ButtonVideo:
+
+                Intent videoIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://" + "zYeIqZzmTKs"));
+
+                if(videoIntent.resolveActivity(getPackageManager())!=null) {
+                    startActivity(videoIntent);
                 }
                 else{
                     Toast.makeText(OrderDetailActivity.this, "No app can handle this action", Toast.LENGTH_SHORT).show();
